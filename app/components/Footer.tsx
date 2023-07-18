@@ -1,6 +1,7 @@
 "use client";
 import Link from "next/link";
 import { usePathname } from "next/navigation";
+import Emoji from "./Emoji";
 
 export interface NavigationProps {
   navigation: {
@@ -14,7 +15,7 @@ export default function Navigation({ ...props }: NavigationProps) {
   const pathname = usePathname();
 
   return (
-    <div className="w-full px-4 py-6 bg-zinc-400">
+    <div className="mt-auto w-full px-4 py-6 bg-zinc-400">
       <ul className="max-w-2xl mx-auto flex flex-row justify-end items-center ">
         {navigation.map((item, index) => {
           const isActive = pathname === item.url;
@@ -25,6 +26,11 @@ export default function Navigation({ ...props }: NavigationProps) {
             </li>
           );
         })}
+        <li> Made with{' '}
+          <Emoji label="love" symbol="❤️" />
+          {' '}by{' '}
+        <a className="hover:text-white" href="https://jaredMakes.com">Jared Makes</a>
+        </li>
       </ul>
     </div>
   );
