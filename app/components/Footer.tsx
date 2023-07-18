@@ -16,7 +16,7 @@ export default function Navigation({ ...props }: NavigationProps) {
 
   return (
     <div className="mt-auto w-full px-4 py-6 bg-zinc-400">
-      <ul className="max-w-2xl mx-auto flex flex-row justify-end items-center ">
+      <ul className="mx-auto flex flex-row justify-start items-center max-w-7xl">
         {navigation.map((item, index) => {
           const isActive = pathname === item.url;
           const linkColor = isActive ? "text-white" : "b;lack";
@@ -26,7 +26,7 @@ export default function Navigation({ ...props }: NavigationProps) {
             </li>
           );
         })}
-        <li> Made with{' '}
+        <li className="ml-auto"> Made with{' '}
           <Emoji label="love" symbol="❤️" />
           {' '}by{' '}
         <a className="hover:text-white" href="https://jaredMakes.com">Jared Makes</a>
